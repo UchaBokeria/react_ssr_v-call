@@ -7,7 +7,7 @@ import React from 'react';
 import App from '../src/App';
 import ReactDOMServer from 'react-dom/server';
 
-require('dotenv').config({path:path.resolve(__dirname+'/.env')});
+const process = require('dotenv').config({path:path.resolve(__dirname+'/.env')}).parsed;
 
 const app = express();
 const http = require('http');
@@ -28,4 +28,4 @@ app.use('^/$', (req, res, next) => {
     });
 });
 
-server.listen(process.env.RUN, () => console.log(`App lunched on port: ${process.env.RUN}`));
+server.listen(process.run, () => console.log(`App lunched on port: ${process.run}`));
