@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #fff;
+  background: #000000
+}
+
+video {background: #080808;}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  z-index: 100000;
+  bottom: 0vh;
+  height: 13vh;
+  gap:2vw;
+  background: transparent;
+  width: 20%;
+  left:40%;
+  border-top-left-radius: 3ch;
+  border-top-right-radius: 3ch;
+}
+
+.videos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videome {
+  background-color: #000000;
+  position:absolute;
+  z-index: 10000;
+  width:25%;
+  height: auto;
+  bottom:0;
+  right:0;
+}
+
+.videoyou {
+  position:absolute;
+  z-index: 1000;
+  width:100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+}
+
+button {
+  opacity:1;
+  outline: 0;
+  margin: 0;
+  border:0;
+  color:white;
+  cursor: pointer;
+  border-radius: 1.4ch;
+  padding: 1vw 1.3vh;
+  font-size: 1vw;
+  background: #626262;
+}
+
+#connectButton.actived {background: #43b36c;}
+#answerButton {background: #43b36c;}
+#hangupButton {background: #a13232;}
+#connectButton[disabled],
+#answerButton[disabled],
+#hangupButton[disabled] {background: #626262;}
+
+
+#answerButton,
+#connectButton {display: none;}
