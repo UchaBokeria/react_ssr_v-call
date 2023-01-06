@@ -38,7 +38,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "ssr": "cross-env NODE_ENV=dev nodemon server/setup.js"
+    "ssr": "cross-env NODE_ENV=dev nodemon server/main.js"
   },
   "eslintConfig": {
     "extends": [
