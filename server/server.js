@@ -28,7 +28,7 @@ app.use('^/$', (req, res, next) => {
     });
 });
 
-app.use('.well-known/acme-challenge/ACDx-Q5EFub_1GD0UOeoAIUlUZJ2Gg3Cj9cqXJAUJR8', (req, res) => {
+app.use('/.well-known/acme-challenge/ACDx-Q5EFub_1GD0UOeoAIUlUZJ2Gg3Cj9cqXJAUJR8', (req, res) => {
     res.send('hi');
     // res.sendFile(path.resolve('./acme-challenge/ACDx-Q5EFub_1GD0UOeoAIUlUZJ2Gg3Cj9cqXJAUJR8'));
 });
