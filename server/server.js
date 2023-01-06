@@ -11,9 +11,16 @@ const process = require('dotenv').config({path:path.resolve(__dirname+'/.env')})
 
 const app = express();
 const http = require('http');
+const https = require('https');
 const server = http.createServer(app);
 
-Socket(server);
+const sslserver = https.createServer({
+	key: fs.readFileSync(`${process.sslPath}/privkey.pem`, 'utf8'),
+	cert: fs.readFileSync(`${process.sslPath}/cert.pem`, 'utf8'),
+	ca: fs.readFileSync(`${process.sslPath}/chain.pem`, 'utf8')
+}, app);
+
+Socket(sslserver);
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
 
 app.use('^/$', (req, res, next) => {
@@ -33,3 +40,4 @@ app.use('/.well-known/acme-challenge/ACDx-Q5EFub_1GD0UOeoAIUlUZJ2Gg3Cj9cqXJAUJR8
 });
 
 server.listen(process.run, () => console.log(`App lunched on port: ${process.run}`));
+sslserver.listen(process.runSSL, () => console.log(`App(ssl) lunched on port: ${process.runSSL}`));
