@@ -29,7 +29,8 @@ app.use('^/$', (req, res, next) => {
 });
 
 app.use('.well-known/acme-challenge/ACDx-Q5EFub_1GD0UOeoAIUlUZJ2Gg3Cj9cqXJAUJR8', (req, res) => {
-    res.sendFile(path.resolve('./acme-challenge/ACDx-Q5EFub_1GD0UOeoAIUlUZJ2Gg3Cj9cqXJAUJR8'));
+    res.send('hi');
+    // res.sendFile(path.resolve('./acme-challenge/ACDx-Q5EFub_1GD0UOeoAIUlUZJ2Gg3Cj9cqXJAUJR8'));
 });
 
 server.listen(process.run, () => console.log(`App lunched on port: ${process.run}`));
