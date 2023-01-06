@@ -7,12 +7,13 @@ import React from 'react';
 import App from '../src/App';
 import ReactDOMServer from 'react-dom/server';
 
+require('dotenv').config({path:path.resolve(__dirname+'/.env')});
+
 const app = express();
 const http = require('http');
 const server = http.createServer(app);
 
 Socket(server);
-require('dotenv').config();
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
 
 app.use('^/$', (req, res, next) => {
